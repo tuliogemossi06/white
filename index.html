@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reciclar é Viver - A Importância da Reciclagem</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #2e8b57;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        nav {
+            background-color: #3cb371;
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #e0f7fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #2e8b57;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #3cb371;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        h2 {
+            color: #2e8b57;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            flex: 1 1 300px;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card h3 {
+            color: #2e8b57;
+            margin-bottom: 1rem;
+        }
+        
+        .benefits {
+            background-color: #e8f5e9;
+            padding: 3rem 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 2rem;
+        }
+        
+        .benefit-text h3 {
+            color: #2e8b57;
+            margin-bottom: 0.5rem;
+        }
+        
+        .how-to-recycle {
+            background-color: white;
+            padding: 3rem 0;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+        
+        .step-number {
+            background-color: #2e8b57;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 2rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .materials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .material {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .material img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #e0f7fa;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .benefit-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .benefit-item img {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">♻ Reciclar é Viver</div>
+            <p>Preservando o planeta para as futuras gerações</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#importancia">Importância</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#como-reciclar">Como Reciclar</a></li>
+            <li><a href="#materiais">Materiais Recicláveis</a></li>
+            <li><a href="#estatisticas">Estatísticas</a></li>
+        </ul>
+    </nav>
+    
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Reciclagem: Pequenas Ações, Grandes Impactos</h1>
+            <p>Cada gesto de reciclagem contribui para um planeta mais limpo e sustentável. Descubra como você pode fazer a diferença!</p>
+            <a href="#como-reciclar" class="btn">Comece a Reciclar Hoje</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <section id="importancia">
+            <h2>Por que a Reciclagem é Importante?</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1587135991058-8816a5a6e0d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Lixo em aterro sanitário">
+                    <div class="card-content">
+                        <h3>Reduz Aterros Sanitários</h3>
+                        <p>A reciclagem diminui a quantidade de lixo enviado para aterros sanitários, prolongando sua vida útil e reduzindo a poluição do solo e da água.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1503596476-1c12a8ba09a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Natureza preservada">
+                    <div class="card-content">
+                        <h3>Conserva Recursos Naturais</h3>
+                        <p>Ao reciclar, reduzimos a necessidade de extrair novas matérias-primas, preservando florestas, minérios e outros recursos naturais.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Energia limpa">
+                    <div class="card-content">
+                        <h3>Economia de Energia</h3>
+                        <p>Produzir produtos a partir de materiais reciclados consome menos energia do que produzi-los a partir de matérias-primas virgens.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="benefits" id="beneficios">
+            <h2>Benefícios da Reciclagem</h2>
+            
+            <div class="benefit-item">
+                <img src="https://images.unsplash.com/photo-1565402170291-8491f14678db?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Ar puro">
+                <div class="benefit-text">
+                    <h3>Redução da Poluição do Ar</h3>
+                    <p>A reciclagem reduz as emissões de gases de efeito estufa que contribuem para as mudanças climáticas globais. Ao reciclar, diminuímos a necessidade de processos industriais poluentes.</p>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Água limpa">
+                <div class="benefit-text">
+                    <h3>Proteção dos Recursos Hídricos</h3>
+                    <p>A reciclagem reduz a contaminação da água causada pelo descarte inadequado de resíduos. Muitos produtos levam décadas ou séculos para se decompor, contaminando rios e oceanos.</p>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Empregos verdes">
+                <div class="benefit-text">
+                    <h3>Criação de Empregos</h3>
+                    <p>A indústria da reciclagem gera empregos em todas as etapas do processo, desde a coleta até a transformação dos materiais em novos produtos.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="how-to-recycle" id="como-reciclar">
+            <h2>Como Reciclar em 5 Passos Simples</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Separe os Materiais</h3>
+                    <p>Comece separando os materiais recicláveis (papel, plástico, vidro e metal) do lixo orgânico e dos rejeitos não recicláveis.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Limpe os Resíduos</h3>
+                    <p>Lave rapidamente embalagens de alimentos para remover resíduos orgânicos. Isso evita mau cheiro e atrai menos insetos.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Reduza o Volume</h3>
+                    <p>Amasse latas e garrafas plásticas, dobre caixas de papelão. Isso ocupa menos espaço e facilita o transporte.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Separe por Categorias</h3>
+                    <p>Use recipientes diferentes para cada tipo de material ou sacolas coloridas conforme o padrão de cores da reciclagem.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Descarte Corretamente</h3>
+                    <p>Leve os materiais para pontos de coleta seletiva ou espere pelo caminhão de coleta seletiva da sua cidade.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="materiais">
+            <h2>Materiais Recicláveis</h2>
+            <div class="materials">
+                <div class="material">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2518/2518026.png" alt="Papel">
+                    <h3>Papel</h3>
+                    <p>Jornais, revistas, caixas, envelopes</p>
+                </div>
+                
+                <div class="material">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2518/2518033.png" alt="Plástico">
+                    <h3>Plástico</h3>
+                    <p>Garrafas, embalagens, potes</p>
+                </div>
+                
+                <div class="material">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2518/2518037.png" alt="Vidro">
+                    <h3>Vidro</h3>
+                    <p>Garrafas, potes, frascos</p>
+                </div>
+                
+                <div class="material">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2518/2518043.png" alt="Metal">
+                    <h3>Metal</h3>
+                    <p>Latas, arames, pregos</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="estatisticas">
+            <h2>Estatísticas Impactantes</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Lixo eletrônico">
+                    <div class="card-content">
+                        <h3>Lixo Eletrônico</h3>
+                        <p>O mundo produz cerca de 50 milhões de toneladas de lixo eletrônico por ano, mas apenas 20% é reciclado formalmente.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1573455494060-c5595004fb6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Plástico nos oceanos">
+                    <div class="card-content">
+                        <h3>Plástico nos Oceanos</h3>
+                        <p>Até 2050, pode haver mais plástico do que peixes nos oceanos, em termos de peso, se não mudarmos nossos hábitos.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1455612693675-112974d4880b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Reciclagem de alumínio">
+                    <div class="card-content">
+                        <h3>Reciclagem de Alumínio</h3>
+                        <p>Reciclar uma única lata de alumínio economiza energia suficiente para manter uma TV ligada por 3 horas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <h2>Juntos Podemos Fazer a Diferença</h2>
+            <p>Comece hoje mesmo a reciclar e incentive seus amigos e familiares a fazerem o mesmo.</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <p>&copy; 2023 Reciclar é Viver - Todos os direitos reservados</p>
+        </div>
+    </footer>
+    
+    <!-- Font Awesome para ícones -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
